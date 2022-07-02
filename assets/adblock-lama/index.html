@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ad Block Javascript</title>
-    <meta name="description" content="Ad Block menggunakan teknik terbaru.">
+    <title>Ad Block Javascript Modern</title>
+    <meta name="description" content="Ad Block menggunakan teknik fetch javascript modern.">
     <style type="text/css">
         .adb {
             display: none;
@@ -47,15 +47,25 @@
             <p>Silahkan nonaktifkan ADBLOCK/Pemblokir Iklan di Browser Kalian :)</p>                  
         </div>              
     </div>
-
-    <script src="https://adikfilm.link/assets/prebid.js"></script>
     
-    <script type="text/javascript">      
-        if( window.adikAds === undefined ){
-            // Lakujan sesuatu jika AdBlock terdeteksi
+    <script type="text/javascript">
+        async function detectAdBlock() {
+            let adBlockEnabled = false;
+            const googleAdUrl = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            try {
+                await fetch(new Request(googleAdUrl)).catch(_ => adBlockEnabled = true)
+            } catch (e) {
+                adBlockEnabled = true;
+            } finally {
+                if(adBlockEnabled) adBlockDetected();
+            }
+        }
+        detectAdBlock();
+        
+        function adBlockDetected() {
             document.getElementById("adb").setAttribute("style", "display:block");
             document.getElementById("adStatus").innerHTML = "true";
-        };
+        }
     </script>
 </body>
 </html>
