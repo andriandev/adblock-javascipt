@@ -11,7 +11,7 @@ Copy dan paste kode di bawah ini di atas tag `</body>`
   </div>              
 </div>
 
-<script src="https://adikfilm.link/assets/prebid.js"></script>
+<script src="https://raw.githubusercontent.com/andriandev/adblock-javascipt/master/assets/prebid.js"></script>
 
 <script type="text/javascript">      
   if( window.adikAds === undefined ){
