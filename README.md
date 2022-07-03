@@ -15,7 +15,7 @@ Copy dan paste kode di bawah ini di atas tag `</body>`
 
 <script type="text/javascript">      
   if( window.adikAds === undefined ){
-    // Lakujan sesuatu jika AdBlock terdeteksi
+    // Lakukan sesuatu jika AdBlock terdeteksi
     document.getElementById("adb").setAttribute("style", "display:block");
   };
 </script>
