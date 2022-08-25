@@ -11,11 +11,10 @@ Copy dan paste kode di bawah ini di atas tag `</body>`
   </div>              
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/adikpm/repo@main/assets/js/prebid.js"></script>
+<script src="https://adikpm.github.io/assets/js/prebid.js"></script>
 
 <script type="text/javascript">      
   if( window.adikAds === undefined ){
-    // Lakukan sesuatu jika AdBlock terdeteksi
     document.getElementById("adb").setAttribute("style", "display:block");
   };
 </script>
